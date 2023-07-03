@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/03 16:37:45 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/07/03 17:12:38 by romvan-d         ###   ########.fr       */
+/*   Created: 2023/07/03 17:08:56 by romvan-d          #+#    #+#             */
+/*   Updated: 2023/07/03 17:16:38 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Contact.hpp"
 
-class Contact
+Contact::Contact(void)
 {
-	public:
-	
-		Contact(void);
-		~Contact(void);
+	std::cout << "Contact constructor has been called" << std::endl;
+	return ;
+}
 
-	private:
-		std::string FirstName;
-		std::string LastName;
-		std::string NickName;
-		std::string	PhoneNumber;
-		std::string DarkestSecret;
-};
+Contact::~Contact(void)
+{
+	std::cout << "Contact destructor has been called" << std::endl;
+	return ;
+}
