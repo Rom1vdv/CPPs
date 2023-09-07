@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/03 16:49:09 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/09/07 17:20:58 by romvan-d         ###   ########.fr       */
+/*   Created: 2023/07/18 15:12:42 by romvan-d          #+#    #+#             */
+/*   Updated: 2023/09/07 17:21:23 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#include "PhoneBook.hpp"
 
-#include <iostream>
-#include "Contact.hpp"
-
-class PhoneBook
+PhoneBook::PhoneBook(void)
 {
-	public :
-		Contact ArrayOfContacts[8];
-		
-		PhoneBook(void);
-		~PhoneBook(void);
+	std::cout << "PhoneBook Constructor called" << std::endl;
+}
 
-		/* Methods */
-		// Add();
-		std::string Search(void);
-};
+PhoneBook::~PhoneBook(void)
+{
+	std::cout << "PhoneBook Destructor called" << std::endl;
+}
 
-#endif
+// std::string PhoneBook::Search(void)
+// {
+// 	for (int i; i = 0; i++)
+// 	{
+// 		std::cout << 
+// 	}
+// }
