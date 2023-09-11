@@ -6,13 +6,14 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:11:21 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/09/07 17:41:11 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/09/11 17:31:24 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef EX01_HPP
 # define EX01_HPP
 
+#include <iostream>
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
 

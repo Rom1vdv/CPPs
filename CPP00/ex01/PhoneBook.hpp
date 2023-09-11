@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 16:49:09 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/09/07 17:20:58 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/09/11 18:08:44 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class PhoneBook
 		~PhoneBook(void);
 
 		/* Methods */
-		// Add();
-		std::string Search(void);
+		Contact	Add(int *i);
+		std::string Search(int NumberOfContact);
 };
 
 #endif

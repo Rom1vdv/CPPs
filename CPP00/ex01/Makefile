@@ -1,9 +1,9 @@
-NAME = megaphone
+NAME = phonebook
 
-SRC = megaphone.cpp
+SRC := $(wildcard *.cpp)
 
 OBJ = $(SRC:.cpp=.o)
-CPP = g++
+CPP = c++
 
 CPPFLAGS = -Wall -Wextra -Werror
 
