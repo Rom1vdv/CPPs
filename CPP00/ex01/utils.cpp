@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex01.hpp                                           :+:      :+:    :+:   */
+/*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/07 17:11:21 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/09/13 18:22:41 by romvan-d         ###   ########.fr       */
+/*   Created: 2023/09/13 18:10:32 by romvan-d          #+#    #+#             */
+/*   Updated: 2023/09/13 18:30:13 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EX01_HPP
-# define EX01_HPP
+#include "ex01.hpp"
 
-#include <iostream>
-#include <iomanip>
-#include "Contact.hpp"
-#include "PhoneBook.hpp"
+std::string TruncateStrIfTooLong(std::string GivenString, int EndIndex)
+{
+	std::string ModifiedString;
 
-std::string	TruncateStrIfTooLong(std::string GivenString, int EndIndex);
-#endif
+	if (GivenString.length() > EndIndex)
+	{
+		ModifiedString = GivenString.substr(0, 9);
+		ModifiedString.replace(9, 1, ".");
+		return ModifiedString;
+	}
+	else
+	{
+		return GivenString;
+	}
+}
