@@ -6,14 +6,14 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 16:37:45 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/09/11 17:34:35 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/09/14 18:36:05 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 
-#include <iostream>
+#include "ex01.hpp"
 
 class Contact
 {
@@ -23,11 +23,11 @@ class Contact
 		~Contact(void);
 
 		/* Getters */
-		std::string GetFirstName(void);
-		std::string GetLastName(void);
-		std::string GetNickName(void);
-		std::string GetPhoneNumber(void);
-		std::string GetDarkestSecret(void);
+		std::string GetFirstName(void) const;
+		std::string GetLastName(void) const;
+		std::string GetNickName(void) const;
+		std::string GetPhoneNumber(void) const;
+		std::string GetDarkestSecret(void) const;
 
 		/* Setters */
 

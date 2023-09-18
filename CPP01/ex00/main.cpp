@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/03 16:49:09 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/09/18 16:30:13 by romvan-d         ###   ########.fr       */
+/*   Created: 2023/09/18 14:30:21 by romvan-d          #+#    #+#             */
+/*   Updated: 2023/09/18 17:45:42 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#include "Zombie.hpp"
 
-#include <iostream>
-#include "Contact.hpp"
-
-class PhoneBook
+int main (void)
 {
-	public :
-		
-		PhoneBook(void);
-		~PhoneBook(void);
+	Zombie *CreateZombie;
 
-		/* Methods */
-		void	Add(int &i);
-		void	Search(int NumberOfContact);
-		void	SearchSpecificIndex(int CurrentAmountOfContacts);
-	private :
-		Contact ArrayOfContacts[8];
-};
+	std::cout << "Heap mode ACTIVATED :" << std::endl;
+	CreateZombie = newZombie("Romain la heap");
+	CreateZombie->announce();
+	
+	std::cout << "STACK mode ACTIVATED :" << std::endl;
+	randomChump("Garreth la stack de chockbar");
 
-#endif
+	std::cout << "This deletes the zombie on the heap :" << std::endl;
+	delete CreateZombie;
+	return (0);
+}

@@ -6,13 +6,13 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 18:10:32 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/09/13 18:30:13 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/09/18 15:28:11 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ex01.hpp"
 
-std::string TruncateStrIfTooLong(std::string GivenString, int EndIndex)
+std::string TruncateStrIfTooLong(std::string GivenString, size_t EndIndex)
 {
 	std::string ModifiedString;
 
@@ -26,4 +26,15 @@ std::string TruncateStrIfTooLong(std::string GivenString, int EndIndex)
 	{
 		return GivenString;
 	}
+}
+bool	VerifyIfStringIsOnlyDigit(std::string GivenString)
+{
+	for (size_t i = 0; i < GivenString.length(); i++)
+	{		
+		if (!isdigit(GivenString[i]))
+		{
+			return false;
+		}
+	}
+	return true;
 }

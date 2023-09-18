@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 17:08:56 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/09/11 16:43:11 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/09/14 15:30:25 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,27 +24,27 @@ Contact::~Contact(void)
 	return ;
 }
 
-std::string Contact::GetFirstName(void)
+std::string Contact::GetFirstName(void) const
 {
 	return this->FirstName;
 }
 
-std::string Contact::GetLastName(void)
+std::string Contact::GetLastName(void) const
 {
 	return this->LastName;
 }
 
-std::string Contact::GetNickName(void)
+std::string Contact::GetNickName(void) const
 {
 	return this->NickName;
 }
 
-std::string Contact::GetPhoneNumber(void)
+std::string Contact::GetPhoneNumber(void) const
 {
 	return this->PhoneNumber;
 }
 
-std::string Contact::GetDarkestSecret(void)
+std::string Contact::GetDarkestSecret(void) const
 {
 	return this->DarkestSecret;
 }

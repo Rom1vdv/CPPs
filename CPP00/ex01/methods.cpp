@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 14:56:10 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/09/13 16:22:11 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/09/18 16:29:38 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ void	Contact::AddFirstName(std::string message)
 	std::cout << message << std::endl;
 	while(Input.empty())
 	{
-		std::getline(std::cin, Input);
+		if (!std::getline(std::cin, Input))
+		{
+			std::exit(EXIT_FAILURE);
+		}
 		if (Input.empty())
 		{
 			std::cout << "Input cannot be empty, I am sowwy ૮₍ ˶• ༝ •˶ ₎ა" << std::endl;
@@ -35,7 +38,10 @@ void	Contact::AddLastName(std::string message)
 	std::cout << message << std::endl;
 	while(Input.empty())
 	{
-		std::getline(std::cin, Input);
+		if (!std::getline(std::cin, Input))
+		{
+			std::exit(EXIT_FAILURE);
+		}
 		if (Input.empty())
 		{
 			std::cout << "Input cannot be empty, I am sowwy ૮₍ ˶• ༝ •˶ ₎ა" << std::endl;
@@ -50,7 +56,10 @@ void	Contact::AddNickName(std::string message)
 	std::cout << message << std::endl;
 	while(Input.empty())
 	{
-		std::getline(std::cin, Input);
+		if (!std::getline(std::cin, Input))
+		{
+			std::exit(EXIT_FAILURE);
+		}
 		if (Input.empty())
 		{
 			std::cout << "Input cannot be empty, I am sowwy ૮₍ ˶• ༝ •˶ ₎ა" << std::endl;
@@ -65,7 +74,10 @@ void	Contact::AddPhoneNumber(std::string message)
 	std::cout << message << std::endl;
 	while(Input.empty())
 	{
-		std::getline(std::cin, Input);
+		if (!std::getline(std::cin, Input))
+		{
+			std::exit(EXIT_FAILURE);
+		}
 		if (Input.empty())
 		{
 			std::cout << "Input cannot be empty, I am sowwy ૮₍ ˶• ༝ •˶ ₎ა" << std::endl;
@@ -81,7 +93,10 @@ void	Contact::AddDarkestSecret(std::string message)
 	std::cout << message << std::endl;
 	while(Input.empty())
 	{
-		std::getline(std::cin, Input);
+		if (!std::getline(std::cin, Input))
+		{
+			std::exit(EXIT_FAILURE);
+		}
 		if (Input.empty())
 		{
 			std::cout << "Input cannot be empty, I am sowwy ૮₍ ˶• ༝ •˶ ₎ა" << std::endl;

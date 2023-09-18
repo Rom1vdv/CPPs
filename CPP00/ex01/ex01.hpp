@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:11:21 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/09/13 18:22:41 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/09/18 16:25:20 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,14 @@
 
 #include <iostream>
 #include <iomanip>
+#include <sstream>
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
 
-std::string	TruncateStrIfTooLong(std::string GivenString, int EndIndex);
+# define CONTINUE_PROGRAM 0
+# define EXIT_PROGRAM 2
+
+std::string	TruncateStrIfTooLong(std::string GivenString, size_t EndIndex);
+bool	VerifyIfStringIsOnlyDigit(std::string GivenString);
+
 #endif
