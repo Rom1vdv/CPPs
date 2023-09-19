@@ -1,40 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 18:04:29 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/09/19 15:59:00 by romvan-d         ###   ########.fr       */
+/*   Created: 2023/09/19 17:34:19 by romvan-d          #+#    #+#             */
+/*   Updated: 2023/09/19 18:33:51 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
-#include <iostream>
+#include "Weapon.hpp"
 
-class Zombie
+class HumanB
 {
-	public:
-		/* Constructor and Destructor */
-		Zombie(void);
-		Zombie (std::string Name);
-		~Zombie(void);
+	public :
 		
+		/* Constructor and Destructor*/
+		HumanB(void);
+		~HumanB(void);
+
+		/* Getters and Setters */
+		
+		void		SetWeapon(Weapon WeaponType);
+		void		SetName(std::string Name);
+
+		std::string	GetWeapon(void) const;
+		std::string GetName(void) const;
+
 		/* Methods */
-
-		void		announce (void) const;
-		void		SetName(std::string);
-		std::string	GetName(void) const;
 		
-	private:
+		void		attack(void) const;
 	
-		std::string	Name;
+	private :
+		
+		std::string Name;
+		Weapon WeaponType;
 };
-
-void	randomChump(std::string Name);
-Zombie* newZombie(std::string Name);
 
 #endif

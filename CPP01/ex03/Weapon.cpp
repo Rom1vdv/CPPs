@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 18:04:29 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/09/19 15:59:00 by romvan-d         ###   ########.fr       */
+/*   Created: 2023/09/19 13:33:45 by romvan-d          #+#    #+#             */
+/*   Updated: 2023/09/19 14:53:40 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "Weapon.hpp"
 
-#include <iostream>
-
-class Zombie
+Weapon::Weapon(void)
 {
-	public:
-		/* Constructor and Destructor */
-		Zombie(void);
-		Zombie (std::string Name);
-		~Zombie(void);
-		
-		/* Methods */
+	std::cout << "Weapon constructor has been called" << std::endl;
+	return ;
+}
 
-		void		announce (void) const;
-		void		SetName(std::string);
-		std::string	GetName(void) const;
-		
-	private:
-	
-		std::string	Name;
-};
+Weapon::~Weapon(void)
+{
+	std::cout << "Weapon destructor has been called" << std::endl;
+	return ;
+}
 
-void	randomChump(std::string Name);
-Zombie* newZombie(std::string Name);
+void	Weapon::setType(std::string NewType)
+{
+	this->type = NewType;
+}
 
-#endif
+std::string const& Weapon::getType(void) const
+{
+	return this->type;
+}

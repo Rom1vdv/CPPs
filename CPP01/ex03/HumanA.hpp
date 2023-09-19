@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 18:04:29 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/09/19 15:59:00 by romvan-d         ###   ########.fr       */
+/*   Created: 2023/09/19 15:33:50 by romvan-d          #+#    #+#             */
+/*   Updated: 2023/09/19 17:27:10 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
 
-#include <iostream>
+#include "Weapon.hpp"
 
-class Zombie
+class HumanA
 {
-	public:
+	public :
 		/* Constructor and Destructor */
-		Zombie(void);
-		Zombie (std::string Name);
-		~Zombie(void);
+		HumanA(std::string Name, Weapon WeaponType);
+		~HumanA(void);
+
+		/* Setters and Getters */
+		void			SetName(std::string Name);
+		std::string		GetName(void) const;
+
+		void			SetWeapon(Weapon WeaponType);
+		std::string		GetWeapon(void) const;
 		
 		/* Methods */
-
-		void		announce (void) const;
-		void		SetName(std::string);
-		std::string	GetName(void) const;
-		
-	private:
+		void			attack(void);
+	private :
+		std::string 	Name;
+		Weapon			WeaponType;
 	
-		std::string	Name;
 };
-
-void	randomChump(std::string Name);
-Zombie* newZombie(std::string Name);
 
 #endif
