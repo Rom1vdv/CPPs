@@ -5,6 +5,8 @@ SRC = megaphone.cpp
 OBJ = $(SRC:.cpp=.o)
 CPP = g++
 
+RM = rm -f
+
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 $(NAME): $(OBJ)

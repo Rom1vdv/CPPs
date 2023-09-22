@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 17:34:19 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/09/19 18:33:51 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/09/22 16:00:59 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,15 @@ class HumanB
 		
 		/* Constructor and Destructor*/
 		HumanB(void);
+		HumanB(std::string Name);
 		~HumanB(void);
 
 		/* Getters and Setters */
 		
-		void		SetWeapon(Weapon WeaponType);
+		void		SetWeapon(Weapon &WeaponType);
 		void		SetName(std::string Name);
 
-		std::string	GetWeapon(void) const;
+		std::string const &	GetWeapon(void) const;
 		std::string GetName(void) const;
 
 		/* Methods */
@@ -38,7 +39,7 @@ class HumanB
 	private :
 		
 		std::string Name;
-		Weapon WeaponType;
+		Weapon*		WeaponType;
 };
 
 #endif

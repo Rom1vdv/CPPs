@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 15:33:50 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/09/19 17:27:10 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/09/22 15:54:40 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class HumanA
 {
 	public :
 		/* Constructor and Destructor */
-		HumanA(std::string Name, Weapon WeaponType);
+		HumanA(std::string Name, Weapon& WeaponType);
 		~HumanA(void);
 
 		/* Setters and Getters */
@@ -30,10 +30,10 @@ class HumanA
 		std::string		GetWeapon(void) const;
 		
 		/* Methods */
-		void			attack(void);
+		void			attack(void) const;
 	private :
 		std::string 	Name;
-		Weapon			WeaponType;
+		Weapon			&WeaponType;
 	
 };
 
