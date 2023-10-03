@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 19:58:46 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/09/26 19:39:12 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/09/27 14:17:23 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 Harl::Harl(void)
 {
 	WhichMod[0] = &Harl::debug;
-	WhichMod[1] = &Harl::error;
-	WhichMod[2] = &Harl::info;
-	WhichMod[3] = &Harl::warning;
+	WhichMod[1] = &Harl::info;
+	WhichMod[2] = &Harl::warning;
+	WhichMod[3] = &Harl::error;
 	std::cout << "Harl constructor has been called" << std::endl;
 	return ;
 }
@@ -53,12 +53,11 @@ void	Harl::error(void)
 
 void	Harl::complain(std::string Level)
 {
-	std::string level[4] = {"DEBUG", "ERROR", "INFO", "WARNING"};
+	std::string level[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	for (size_t i = 0; i < 4; ++i)
 	{
 		if (level[i].compare(Level) == 0)
 		{
-			std::cout << "Hello" << "\n";
 			(this->*WhichMod[i])();
 			return ;
 		}

@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 19:55:32 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/09/26 19:09:13 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/09/27 14:40:36 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,15 @@
 # define HARL_HPP
 
 #include <iostream>
+
+enum Mods
+{
+	DEBUG,
+	INFO,
+	WARNING,
+	ERROR,
+	WRONG,
+};
 
 class Harl
 {
