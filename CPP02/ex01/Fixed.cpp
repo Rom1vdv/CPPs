@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:46:39 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/03 18:31:45 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/10/04 15:27:21 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Fixed::Fixed(const int number) : number(number)
 Fixed::Fixed(const float number) : number(number)
 {
 	std::cout << "Parametric Fixed [Float] constructor called" << std::endl;
-	this->number = roundf((this->number << this->fractionalBits));
+	this->number = roundf(number * (1 << this->fractionalBits));
 	return ;
 }
 Fixed::Fixed(Fixed const & src)
@@ -60,18 +60,18 @@ void	Fixed::setRawBits(const int raw)
 	this->number = raw;
 }
 
-// float Fixed::toFloat(void) const
-// {
-	
-// }
+float Fixed::toFloat(void) const
+{
+	return ((float) this->number / (1 << this->fractionalBits));
+}
 
 int	Fixed::toInt(void) const
 {
 	return this->number >> this->fractionalBits;
 }
 
-// std::ostream & operator<<(std::ostream & output, Fixed const & rhs)
-// {
-// 	output << rhs.toFloat();
-// 	return output;
-// }
+std::ostream & operator<<(std::ostream & output, Fixed const & rhs)
+{
+	output << rhs.toFloat();
+	return output;
+}
