@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rom1 <rom1@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 15:28:22 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/06 15:34:57 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/10/09 00:07:08 by rom1             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ class Point
 		Point(Point const & point);
 		~Point();
 	
-
+		Point & operator=(Point const & rhs);
+		Fixed getX() const;
+		Fixed getY() const;
+		
 	private :
 		const Fixed x;
 		const Fixed y;	
