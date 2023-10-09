@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:46:39 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/06 15:21:12 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/10/09 11:47:07 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ Fixed::Fixed(Fixed const & src)
 Fixed::~Fixed(void)
 {
 	std::cout << "Fixed destructor called" << std::endl;
+	return ;
 }
 
 Fixed & Fixed::operator=(Fixed const & rhs)

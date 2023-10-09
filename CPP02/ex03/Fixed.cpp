@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:46:39 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/06 15:21:12 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/10/09 11:46:42 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,29 @@
 	
 Fixed::Fixed(void)
 {
-	std::cout << "Fixed constructor called" << std::endl;
 	this->number = 0;
 	return ;
 }
 Fixed::Fixed(const int number) : number(number)
 {
-	std::cout << "Parametric Fixed [Int] constructor called" << std::endl;
 	this->number = this->number << this->fractionalBits;
 	return ;
 }
 
 Fixed::Fixed(const float number) : number(number)
 {
-	std::cout << "Parametric Fixed [Float] constructor called" << std::endl;
 	this->number = roundf(number * (1 << this->fractionalBits));
 	return ;
 }
 Fixed::Fixed(Fixed const & src)
 {
-	std::cout << "Copy Constructor called" << std::endl;
 	this->number = src.getRawBits();
 	return ;
 }
 
 Fixed::~Fixed(void)
 {
-	std::cout << "Fixed destructor called" << std::endl;
+	return ;
 }
 
 Fixed & Fixed::operator=(Fixed const & rhs)

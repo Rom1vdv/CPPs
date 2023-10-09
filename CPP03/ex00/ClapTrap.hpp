@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.hpp                                          :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 15:28:22 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/09 11:43:34 by romvan-d         ###   ########.fr       */
+/*   Created: 2023/10/09 17:15:04 by romvan-d          #+#    #+#             */
+/*   Updated: 2023/10/09 18:02:36 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POINT_HPP
-# define POINT_HPP
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
-#include "Fixed.hpp"
+#include <iostream>
 
-class Point
+class ClapTrap
 {
 	public :
-		Point();
-		Point(const float x, const float y);
-		Point(Point const & point);
-		~Point();
-	
-		Point & operator=(Point const & rhs);
-		Fixed getX() const;
-		Fixed getY() const;
-		
-	private :
-		const Fixed x;
-		const Fixed y;	
-};
 
-bool	bsp(Point const a, Point const b, Point const c, Point const point);
+		ClapTrap();
+		ClapTrap(std::string Name);
+		ClapTrap(ClapTrap const & other);
+		~ClapTrap();
+
+		/* Member functions */
+		
+		void	attack(std::string const & target);
+		void	takeDamage(unsigned int amount);
+		void	beRepaired(unsigned int amount);
+
+	private :
+
+		std::string name;
+		unsigned int hitPoints;
+		unsigned int energyPoints;
+		unsigned int attackDamage;	
+};
 
 #endif

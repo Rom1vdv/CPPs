@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rom1 <rom1@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 15:28:16 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/09 00:07:18 by rom1             ###   ########.fr       */
+/*   Updated: 2023/10/09 11:46:56 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 Point::Point() : x(0), y(0)
 {
-	std::cout << "Default constructor called" << std::endl;
 	return ;	
 }
 
 Point::Point(const float x, const float y) : x(x), y(y)
 {
-	std::cout << "Parametric constructor called" << std::endl;
 	return ;
 }
 Point::Point(Point const & point) : x(point.x), y(point.y)
@@ -30,7 +28,7 @@ Point::Point(Point const & point) : x(point.x), y(point.y)
 
 Point::~Point()
 {
-	std::cout << "Destructor called" << std::endl;
+	return ;
 }
 
 Point & Point::operator=(Point const & rhs)
