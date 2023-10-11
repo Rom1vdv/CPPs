@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 17:15:04 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/11 14:23:44 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/10/11 18:05:17 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ class ClapTrap
 		/* Member functions */
 		
 		void	setAttackDamage(unsigned int amount);
-		void	attack(std::string const & target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
+		void	attack(std::string const & target);
 
 	private :
 

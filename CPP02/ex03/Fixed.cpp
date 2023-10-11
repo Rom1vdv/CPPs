@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:46:39 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/09 11:46:42 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/10/11 12:17:06 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,8 @@ Fixed Fixed::operator*(Fixed const & rhs) const
 
 Fixed Fixed::operator/(Fixed const & rhs) const
 {
+	if (!rhs.number)
+		return (Fixed( -8388610 ));
 	return this->toFloat() / rhs.toFloat();
 }
 

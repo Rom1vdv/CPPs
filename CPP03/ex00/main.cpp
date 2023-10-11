@@ -5,26 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/28 19:34:32 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/11 12:13:31 by romvan-d         ###   ########.fr       */
+/*   Created: 2023/10/11 14:13:48 by romvan-d          #+#    #+#             */
+/*   Updated: 2023/10/11 14:37:07 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ClapTrap.hpp"
 
-#include <cmath>
-#include <iostream>
-
-int main( void ) 
+int main(void)
 {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
+	ClapTrap Jesus("Romain");
+	ClapTrap God(Jesus);
+	ClapTrap Angel;
+	
+	Jesus.attack("Yann");
+	Jesus.setAttackDamage(3);
+	Jesus.attack("Yann");
+	Jesus.takeDamage(4);
+	Jesus.beRepaired(3);
+	Jesus.takeDamage(9);
+	Jesus.attack("Adrian");
+	Jesus.takeDamage(4);
+
+	Angel = God;
+	Angel.attack("Yann");
 }

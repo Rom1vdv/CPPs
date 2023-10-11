@@ -1,43 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/09 17:15:04 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/11 14:23:44 by romvan-d         ###   ########.fr       */
+/*   Created: 2023/10/11 14:38:00 by romvan-d          #+#    #+#             */
+/*   Updated: 2023/10/11 18:31:12 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#include "ClapTrap.hpp"
 
-#include <iostream>
-
-class ClapTrap
+class ScavTrap : public ClapTrap
 {
 	public :
-
-		ClapTrap();
-		ClapTrap(std::string Name);
-		ClapTrap(ClapTrap const & other);
-		~ClapTrap();
-
-		ClapTrap & operator=(ClapTrap const & rhs);
-		/* Member functions */
 		
-		void	setAttackDamage(unsigned int amount);
-		void	attack(std::string const & target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
+		ScavTrap();
+		ScavTrap(std::string Name);
+		~ScavTrap();
+		ScavTrap(ScavTrap const & other);
+		ScavTrap & operator=(ScavTrap const & rhs);
+		
+		void guardGuate();
 
+		
 	private :
-
+	
 		std::string name;
+		unsigned int attackDamage;
 		unsigned int hitPoints;
 		unsigned int energyPoints;
-		unsigned int attackDamage;	
 };
-
-#endif

@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 23:40:05 by rom1              #+#    #+#             */
-/*   Updated: 2023/10/09 16:45:17 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/10/11 12:17:21 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ bool bsp (Point const a, Point const b, Point const c, Point const point)
 	Fixed AreaNoB = calculateTriangleArea(a, c, point);
 	Fixed AreaNoC = calculateTriangleArea(a, b, point);
 
-	if (AreaNoA == 0 || AreaNoB == 0 || AreaNoC == 0)
-		return true;
-	return (TotalArea == AreaNoA + AreaNoB + AreaNoC);
+	if (AreaNoA + AreaNoB + AreaNoC > TotalArea)
+		return false;
+	return true;
 
 }
