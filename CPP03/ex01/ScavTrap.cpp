@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 17:37:02 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/12 17:49:59 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/10/13 14:13:44 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ ScavTrap::ScavTrap() : ClapTrap()
 ScavTrap::ScavTrap(std::string Name) : ClapTrap()
 {
 	std::cout << "[Parametric] ScavTrap constructor called " << std::endl;
+	this->name = Name;
+	this->hitPoints = 100;
+	this->energyPoints = 50;
+	this->attackDamage = 20;
 	return ;
 }
 
@@ -43,6 +47,11 @@ ScavTrap & ScavTrap::operator=(ScavTrap const & rhs)
 	this->energyPoints = rhs.energyPoints;
 	this->attackDamage = rhs.attackDamage;
 	return *this;
+}
+
+void	ScavTrap::setHitPoints(unsigned int amount)
+{
+	this->hitPoints = amount;
 }
 
 void	ScavTrap::guardGuate()

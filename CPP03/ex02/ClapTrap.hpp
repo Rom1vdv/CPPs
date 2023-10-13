@@ -1,34 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/11 14:38:00 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/13 14:12:55 by romvan-d         ###   ########.fr       */
+/*   Created: 2023/10/09 17:15:04 by romvan-d          #+#    #+#             */
+/*   Updated: 2023/10/12 17:02:16 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
-class ScavTrap : public ClapTrap
+#include <iostream>
+
+class ClapTrap
 {
 	public :
-		ScavTrap();
-		ScavTrap(std::string Name);
-		~ScavTrap();
-		ScavTrap(ScavTrap const & other);
-		ScavTrap & operator=(ScavTrap const & rhs);
+
+		ClapTrap();
+		ClapTrap(std::string Name);
+		ClapTrap(ClapTrap const & other);
+		~ClapTrap();
+
+		ClapTrap & operator=(ClapTrap const & rhs);
+		/* Member functions */
 		
-		void	guardGuate();
+		void	setAttackDamage(unsigned int amount);
+		void	takeDamage(unsigned int amount);
+		void	beRepaired(unsigned int amount);
 		void	attack(std::string const & target);
-		void	setHitPoints(unsigned int amount);
-		
-	private :
-	
+
+	protected :
+
 		std::string name;
 		unsigned int hitPoints;
 		unsigned int energyPoints;
-		unsigned int attackDamage;
+		unsigned int attackDamage;	
 };
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 14:13:48 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/11 18:19:25 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/10/13 14:14:06 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 
 int main(void)
 {
-	ScavTrap Jesus("name");
+	ScavTrap Jesus("Romain");
 
 	Jesus.attack("God");
+	Jesus.guardGuate();
+	Jesus.setHitPoints(0);
+	Jesus.attack("Kenzo");
+	
 	return 0;
 }
