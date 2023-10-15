@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rom1 <rom1@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/13 14:43:03 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/15 21:39:03 by rom1             ###   ########.fr       */
+/*   Created: 2023/10/11 14:38:00 by romvan-d          #+#    #+#             */
+/*   Updated: 2023/10/15 22:17:16 by rom1             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
-
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class ScavTrap : public virtual ClapTrap
 {
 	public :
-
-		FragTrap();
-		FragTrap(std::string name);
-		FragTrap(FragTrap const & other);
-		~FragTrap();
-		FragTrap & operator=(FragTrap const & rhs);
-
-		void	highFivesGuys(void);
+		ScavTrap();
+		ScavTrap(std::string Name);
+		~ScavTrap();
+		ScavTrap(ScavTrap const & other);
+		ScavTrap & operator=(ScavTrap const & rhs);
+		
+		void	guardGuate();
+		void	attack(std::string const & target);
+		void	setHitPoints(unsigned int amount);
 		
 	private :
-		
-		std::string 	name;
-		unsigned int	hitPoints;
-		unsigned int	energyPoints;
-		unsigned int	attackDamage;
+	
+		std::string name;
+		unsigned int hitPoints;
+		unsigned int energyPoints;
+		unsigned int attackDamage;
 };
-
-#endif

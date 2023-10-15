@@ -6,7 +6,7 @@
 /*   By: rom1 <rom1@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 14:43:03 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/15 21:39:03 by rom1             ###   ########.fr       */
+/*   Updated: 2023/10/15 21:57:21 by rom1             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : public virtual ClapTrap
 {
 	public :
 
