@@ -1,36 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/15 21:59:45 by rom1              #+#    #+#             */
-/*   Updated: 2023/10/16 17:50:21 by romvan-d         ###   ########.fr       */
+/*   Created: 2023/10/16 18:11:38 by romvan-d          #+#    #+#             */
+/*   Updated: 2023/10/16 18:35:11 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMONDTRAP_HPP
-#define DIAMONDTRAP_HPP
+#include "DiamondTrap.hpp"
 
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
-
-class DiamondTrap : public ScavTrap, public FragTrap
+int main(void)
 {
-	public :
+	DiamondTrap DiamondJoe("Romain");
 
-	DiamondTrap();
-	DiamondTrap(std::string Name);
-	DiamondTrap(DiamondTrap const & other);
-	~DiamondTrap();
-	DiamondTrap & operator=(DiamondTrap const & rhs);
-
-	void	whoAmI();
-	
-	private :
-	
-		std::string name;
-};
-
-#endif
+	DiamondJoe.whoAmI();
+}

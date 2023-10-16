@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rom1 <rom1@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 14:38:00 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/15 22:17:16 by rom1             ###   ########.fr       */
+/*   Updated: 2023/10/16 17:48:28 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class ScavTrap : public virtual ClapTrap
 		void	attack(std::string const & target);
 		void	setHitPoints(unsigned int amount);
 		
-	private :
+	protected :
 	
 		std::string name;
 		unsigned int hitPoints;
