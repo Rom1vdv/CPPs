@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:50:58 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/20 17:20:32 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/10/20 17:57:07 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,12 @@ class Animal
 	public :
 		
 		Animal();
-		Animal();
 		Animal(Animal const & other);
 		~Animal();
 		
-		virtual void makeSound();
+		Animal & operator=(Animal const & rhs);
+		
+		virtual void makeSound() const;
 };
 
 #endif
