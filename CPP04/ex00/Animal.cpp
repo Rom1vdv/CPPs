@@ -1,38 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/15 21:59:45 by rom1              #+#    #+#             */
-/*   Updated: 2023/10/20 14:30:23 by romvan-d         ###   ########.fr       */
+/*   Created: 2023/10/20 17:38:51 by romvan-d          #+#    #+#             */
+/*   Updated: 2023/10/20 17:39:46 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMONDTRAP_HPP
-#define DIAMONDTRAP_HPP
+#include "Animal.hpp"
 
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
-
-class DiamondTrap : public ScavTrap, public FragTrap
+Animal::Animal()
 {
-	public :
+	std::cout << "Animal [Default] Constructor called" << std::endl;
+	return ;
+}
 
-	DiamondTrap();
-	DiamondTrap(std::string Name);
-	DiamondTrap(DiamondTrap const & other);
-	~DiamondTrap();
-	DiamondTrap & operator=(DiamondTrap const & rhs);
-
-	void	whoAmI();
-	using ScavTrap::attack;
-	
-	private :
-	
-		std::string name;
-		
-};
-
-#endif
