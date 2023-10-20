@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rom1 <rom1@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 22:08:04 by rom1              #+#    #+#             */
-/*   Updated: 2023/10/20 15:50:00 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/10/20 22:12:44 by rom1             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,4 @@ void	DiamondTrap::whoAmI()
 {
 	std::cout << "DiamondTrap Name : " << this->DiamondTrap::name << std::endl;
 	std::cout << "ClapTrap Name : " << ClapTrap::name << std::endl;
-}k
+}
