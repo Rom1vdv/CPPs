@@ -5,37 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/28 19:34:32 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/23 13:57:23 by romvan-d         ###   ########.fr       */
+/*   Created: 2023/10/20 22:37:16 by rom1              #+#    #+#             */
+/*   Updated: 2023/10/23 15:14:43 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
-#include <cmath>
-#include <iostream>
-
-int main( void ) 
+int main()
 {
-	Point a(1.0, 1.0);
-	Point b(3.0, 4.0);
-	Point c(5.0, 2.0);
-	Point d(3.0, 3.0);
-	bool bspvalue;
-	
-	bspvalue = bsp(a, b, c, d);
-	std::cout << "Is d in bsp : " << bspvalue << std::endl;
-	
-	// Point f(0, 1);
+	const Animal *i = new Cat();
+	const Animal *j = new Dog();
 
-	// bspvalue = bsp(a, b, c, f);
-	// std::cout << "Is d in bsp : " << bspvalue << std::endl;
-
-	// Point g(5, 2);
-	
-	// bspvalue = bsp(a, b, c, g);
-	// std::cout << "Is d in bsp : " << bspvalue << std::endl;
-	
-	
 	return 0;
 }

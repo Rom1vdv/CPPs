@@ -1,46 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 22:35:11 by rom1              #+#    #+#             */
-/*   Updated: 2023/10/23 13:27:03 by romvan-d         ###   ########.fr       */
+/*   Created: 2023/10/20 22:05:18 by rom1              #+#    #+#             */
+/*   Updated: 2023/10/23 13:50:58 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 
-Dog::Dog()
+Cat::Cat()
 : Animal()
 {
-	std::cout << "[Default] Dog Constructor called" << std::endl;
-	this->type = "Dog";
+	std::cout << "[Default] Cat Constructor called" << std::endl;
+	this->type = "Cat";
+	this->brain = new Brain();
 	return ;
 }
 
-Dog::Dog(Dog const & other)
+Cat::Cat(Cat const & other)
 {
-	std::cout << "[Copy] Dog Constructor called" << std::endl;
+	std::cout << "[Copy] Cat Constructor called" << std::endl;
 	this->type = other.type;
 	return ; 
 }
 
-Dog::~Dog()
+Cat::~Cat()
 {
-	std::cout << "Dog Destructor called" << std::endl;
+	std::cout << "Cat Destructor called" << std::endl;
+	delete this->brain;
 	return ;
 }
 
-Dog & Dog::operator=(Dog const & rhs)
+Cat & Cat::operator=(Cat const & rhs)
 {
 	this->type = rhs.type;
 	return *this;
 }
 
-void Dog::makeSound() const
+void Cat::makeSound() const
 {
-	std::cout << "Bark Bark Bark" << std::endl;
+	std::cout << "Meowdy" << std::endl;
 	return ;
 }

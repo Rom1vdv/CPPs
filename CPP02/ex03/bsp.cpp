@@ -3,14 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   bsp.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rom1 <rom1@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 23:40:05 by rom1              #+#    #+#             */
-/*   Updated: 2023/10/15 15:10:37 by rom1             ###   ########.fr       */
+/*   Updated: 2023/10/23 13:58:39 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
+#include <cstdbool>
+
+Fixed calculateTriangleArea(Point const A, Point const B, Point const C)
+{
+	Fixed determinant;
+	determinant = A.getX() * (B.getY() - C.getY()) -
+		A.getY() * (B.getX() - C.getX()) + 
+		(B.getX() * C.getY() - C.getX() * B.getY());
+	return determinant / Fixed(2);
+}
 
 bool bsp (Point const a, Point const b, Point const c, Point const point)
 {
@@ -32,12 +42,3 @@ Area = 1/2 * determ(Ax Ay 1
 					Bx By 1
 					Cx Cy 1)
 */
-
-Fixed calculateTriangleArea(Point const A, Point const B, Point const C)
-{
-	Fixed determinant;
-	determinant = A.getX() * (B.getY() - C.getY()) + 
-		A.getY() * (B.getX() - C.getX()) + 
-		(B.getX() * C.getY() - C.getX() * B.getY());
-	return determinant / 2.0f;
-}

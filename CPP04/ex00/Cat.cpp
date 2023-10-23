@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rom1 <rom1@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 22:05:18 by rom1              #+#    #+#             */
-/*   Updated: 2023/10/20 23:14:10 by rom1             ###   ########.fr       */
+/*   Updated: 2023/10/23 13:27:00 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ Cat::Cat()
 }
 
 Cat::Cat(Cat const & other)
-: Animal()
 {
 	std::cout << "[Copy] Cat Constructor called" << std::endl;
 	this->type = other.type;

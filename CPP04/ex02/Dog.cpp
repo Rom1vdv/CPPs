@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 22:35:11 by rom1              #+#    #+#             */
-/*   Updated: 2023/10/23 13:27:03 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/10/23 13:51:02 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ Dog::Dog()
 {
 	std::cout << "[Default] Dog Constructor called" << std::endl;
 	this->type = "Dog";
+	this->brain = new Brain();
 	return ;
 }
 
@@ -30,6 +31,7 @@ Dog::Dog(Dog const & other)
 Dog::~Dog()
 {
 	std::cout << "Dog Destructor called" << std::endl;
+	delete this->brain;
 	return ;
 }
 
