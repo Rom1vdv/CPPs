@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 16:20:13 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/23 18:03:52 by romvan-d         ###   ########.fr       */
+/*   Created: 2023/10/23 17:44:01 by romvan-d          #+#    #+#             */
+/*   Updated: 2023/10/23 18:28:45 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_HPP
-#define CURE_HPP
+#include "Cure.hpp"
 
-#include "AMateria.hpp"
-
-class Cure : public AMateria
+Cure::Cure()
+: AMateria("cure")
 {
-	public :
+	return ;
+}
 
-		Cure();
-		Cure(Cure const & other);
-		~Cure();
-		Cure & operator=(Cure const & rhs);
+Cure::Cure(Cure const & other)
+{
+	(void) other;
+}
 
-		virtual AMateria * clone() const;
-		virtual void use(ICharacter & target);
-		
-};
-
-#endif
+Cure::~Cure()
+{
+	return ;
+}
