@@ -6,35 +6,34 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 19:34:32 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/23 13:57:23 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/10/25 16:55:24 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-#include <cmath>
 #include <iostream>
 
 int main( void ) 
 {
-	Point a(1.0, 1.0);
-	Point b(3.0, 4.0);
-	Point c(5.0, 2.0);
-	Point d(3.0, 3.0);
-	bool bspvalue;
+	Point a(1, 1);
+	Point b(3, 4);
+	Point c(5, 2);
+	Point d(3, 3);
+	int bspvalue;
 	
 	bspvalue = bsp(a, b, c, d);
 	std::cout << "Is d in bsp : " << bspvalue << std::endl;
 	
-	// Point f(0, 1);
+	Point f(3, 4);
 
-	// bspvalue = bsp(a, b, c, f);
-	// std::cout << "Is d in bsp : " << bspvalue << std::endl;
+	bspvalue = bsp(a, b, c, f);
+	std::cout << "Is f in bsp : " << bspvalue << std::endl;
 
-	// Point g(5, 2);
+	Point g(0, 3);
 	
-	// bspvalue = bsp(a, b, c, g);
-	// std::cout << "Is d in bsp : " << bspvalue << std::endl;
+	bspvalue = bsp(a, b, c, g);
+	std::cout << "Is g in bsp : " << bspvalue << std::endl;
 	
 	
 	return 0;

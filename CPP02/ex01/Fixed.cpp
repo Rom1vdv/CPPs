@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:46:39 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/09 11:47:14 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/10/25 17:07:48 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ Fixed::Fixed(void)
 	this->number = 0;
 	return ;
 }
-Fixed::Fixed(const int number) : number(number)
+Fixed::Fixed(const int number)
 {
 	std::cout << "Parametric Fixed [Int] constructor called" << std::endl;
-	this->number = this->number << this->fractionalBits;
+	this->number = number << this->fractionalBits;
 	return ;
 }
 
-Fixed::Fixed(const float number) : number(number)
+Fixed::Fixed(const float number)
 {
 	std::cout << "Parametric Fixed [Float] constructor called" << std::endl;
 	this->number = roundf(number * (1 << this->fractionalBits));
@@ -63,7 +63,7 @@ void	Fixed::setRawBits(const int raw)
 
 float Fixed::toFloat(void) const
 {
-	return ((float) this->number / (1 << this->fractionalBits));
+	return ((float) (this->number) / (1 << this->fractionalBits));
 }
 
 int	Fixed::toInt(void) const

@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.hpp                                          :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 15:28:22 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/25 15:32:01 by romvan-d         ###   ########.fr       */
+/*   Created: 2023/10/25 16:33:36 by romvan-d          #+#    #+#             */
+/*   Updated: 2023/10/25 16:38:02 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POINT_HPP
-# define POINT_HPP
+#include "AMateria.hpp"
 
-#include "Fixed.hpp"
-
-class Point
+AMateria::AMateria()
 {
-	public :
-		Point();
-		Point(const float x, const float y);
-		Point(Point const & point);
-		~Point();
 	
-		Point & operator=(Point const & rhs);
-		Fixed getX() const;
-		Fixed getY() const;
-		
-	private :
-		const Fixed x;
-		const Fixed y;	
-};
+}
 
-bool	bsp(Point const a, Point const b, Point const c, Point const point);
+AMateria::AMateria(std::string const & type)
+{
+	
+}
 
-#endif
+AMateria::AMateria(AMateria const & other)
+{
+	
+}
+
+AMateria::~AMateria()
+{
+	
+}
+
+AMateria & AMateria::operator=(AMateria const & rhs)
+{
+	
+}

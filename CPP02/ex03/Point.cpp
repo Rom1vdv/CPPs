@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 15:28:16 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/09 11:46:56 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/10/25 15:31:56 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Point::Point() : x(0), y(0)
 	return ;	
 }
 
-Point::Point(const float x, const float y) : x(x), y(y)
+Point::Point(const float x, const float y) : x((Fixed) x), y((Fixed) y)
 {
 	return ;
 }
