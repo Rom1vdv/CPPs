@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 21:59:45 by rom1              #+#    #+#             */
-/*   Updated: 2023/10/20 14:30:23 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/10/26 17:10:55 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-class DiamondTrap : public ScavTrap, public FragTrap
+class DiamondTrap : public virtual ScavTrap, public virtual FragTrap
 {
 	public :
 
