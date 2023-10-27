@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rom1 <rom1@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 14:43:03 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/15 21:39:03 by rom1             ###   ########.fr       */
+/*   Updated: 2023/10/27 16:06:49 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,12 @@ class FragTrap : public ClapTrap
 		FragTrap(FragTrap const & other);
 		~FragTrap();
 		FragTrap & operator=(FragTrap const & rhs);
-
+		
+		void	setHitPoints(unsigned int amount);
+		std::string getName() const;
+		unsigned int getHitPoints() const;
+		unsigned int getEnergyPoints() const;
+		unsigned int getAttackDamage() const;
 		void	highFivesGuys(void);
 		
 	private :

@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rom1 <rom1@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 22:08:04 by rom1              #+#    #+#             */
-/*   Updated: 2023/10/20 22:12:44 by rom1             ###   ########.fr       */
+/*   Updated: 2023/10/26 21:22:41 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap()
-: ClapTrap(), ScavTrap(), FragTrap() 
+: ClapTrap(), ScavTrap(), FragTrap()
 {
 	this->name = "Default";
 	ClapTrap::name = this->ClapTrap::name.append("_clap_name");

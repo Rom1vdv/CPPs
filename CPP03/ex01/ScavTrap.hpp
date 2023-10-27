@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rom1 <rom1@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 14:38:00 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/15 21:57:13 by rom1             ###   ########.fr       */
+/*   Updated: 2023/10/27 16:03:49 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public virtual ClapTrap
+class ScavTrap : public ClapTrap
 {
 	public :
 		ScavTrap();
@@ -24,6 +24,11 @@ class ScavTrap : public virtual ClapTrap
 		void	guardGuate();
 		void	attack(std::string const & target);
 		void	setHitPoints(unsigned int amount);
+		std::string getName() const;
+		unsigned int getHitPoints() const;
+		unsigned int getEnergyPoints() const;
+		unsigned int getAttackDamage() const;
+
 		
 	private :
 	

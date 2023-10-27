@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rom1 <rom1@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 17:37:02 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/15 21:47:25 by rom1             ###   ########.fr       */
+/*   Updated: 2023/10/27 15:46:57 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ScavTrap::ScavTrap()
 }
 
 ScavTrap::ScavTrap(std::string Name)
-: ClapTrap(), name(Name), hitPoints(100), energyPoints(50), attackDamage(20)
+: ClapTrap(Name), name(Name), hitPoints(100), energyPoints(50), attackDamage(20)
 {
 	std::cout << "[Parametric] ScavTrap constructor called " << std::endl;
 	return ;
@@ -53,8 +53,38 @@ void	ScavTrap::setHitPoints(unsigned int amount)
 	this->hitPoints = amount;
 }
 
+std::string ScavTrap::getName() const
+{
+	return this->name;
+}
+
+unsigned int ScavTrap::getHitPoints() const
+{
+	return this->hitPoints;
+}
+
+unsigned int ScavTrap::getEnergyPoints() const
+{
+	return this->energyPoints;
+}
+
+unsigned int ScavTrap::getAttackDamage() const
+{
+	return this->attackDamage;
+}
+
 void	ScavTrap::guardGuate()
 {
+	if (this->energyPoints <= 0)
+	{
+		std::cout << "ScavTrap " << this->name << "cannot do anything because he depleted his energy" << std::endl;
+		return ;
+	}
+	if (this->hitPoints <= 0)
+	{
+		std::cout << "ScavTrap " << this->name << " cannot do anything because he lost all his health points" << std::endl;
+		return ;
+	}
 	std::cout << "ScavTrap " << this->name << " is in GateKeeper Mode." << std::endl;
 }
 
