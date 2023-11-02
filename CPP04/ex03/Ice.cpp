@@ -1,48 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.cpp                                           :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 17:44:01 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/11/02 16:08:18 by romvan-d         ###   ########.fr       */
+/*   Created: 2023/11/02 16:32:47 by romvan-d          #+#    #+#             */
+/*   Updated: 2023/11/02 16:33:46 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cure.hpp"
+#include "Ice.hpp"
 
-Cure::Cure()
-: AMateria("cure")
+Ice::Ice()
+: AMateria("ice")
 {
 	return ;
 }
 
-Cure::Cure(Cure const & other)
-: AMateria("cure")
+Ice::Ice(Ice const & other)
+: AMateria("ice")
 {
 	(void) other;
 }
 
-Cure::~Cure()
+Ice::~Ice()
 {
 	return ;
 }
 
-void	Cure::use(ICharacter & target)
+void	Ice::use(ICharacter & target)
 {
-	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl; 
+	std::cout << "* shoots an ice bolt at " << target.getName() << std::endl; 
 	return ;
 }
 
-Cure & Cure::operator=(Cure const & rhs)
+Ice & Ice::operator=(Ice const & rhs)
 {
 	(void) rhs;
 	return (*this);
 }
 
-AMateria *	Cure::clone() const
+AMateria *	Ice::clone() const
 {
-	Cure *clone = new Cure(*this);
+	Ice *clone = new Ice(*this);
 	return (clone);
 }

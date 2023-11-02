@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 17:20:12 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/28 14:00:33 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/10/29 14:25:32 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,11 @@ class Bureaucrat
 		~Bureaucrat();
 		Bureaucrat & operator=(Bureaucrat const & rhs);
 		
+		class GradeTooHighException
+		{
+			
+		};
+
 		std::string const	getName() const;
 		unsigned int		getGrade() const;
 		void				incrementGrade(int value = 1);
