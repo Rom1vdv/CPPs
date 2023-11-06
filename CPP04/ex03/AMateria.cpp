@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 16:33:36 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/26 15:11:27 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/11/06 13:52:57 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ AMateria::AMateria(AMateria const & other)
 AMateria::~AMateria()
 {
 	return ;
+}
+
+std::string const & AMateria::getType() const
+{
+	return this->type;
 }
 
 AMateria & AMateria::operator=(AMateria const & rhs)
