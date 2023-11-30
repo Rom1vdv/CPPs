@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 21:59:45 by rom1              #+#    #+#             */
-/*   Updated: 2023/11/02 16:10:27 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/11/20 15:55:31 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class DiamondTrap : public ScavTrap, public FragTrap
 	public :
 
 	DiamondTrap();
-	DiamondTrap(std::string Name);
+	DiamondTrap(std::string name);
 	DiamondTrap(DiamondTrap const & other);
 	~DiamondTrap();
 	DiamondTrap & operator=(DiamondTrap const & rhs);

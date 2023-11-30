@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 14:38:00 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/27 16:03:49 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/11/20 14:25:39 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,4 @@ class ScavTrap : public ClapTrap
 		unsigned int getEnergyPoints() const;
 		unsigned int getAttackDamage() const;
 
-		
-	private :
-	
-		std::string name;
-		unsigned int hitPoints;
-		unsigned int energyPoints;
-		unsigned int attackDamage;
 };

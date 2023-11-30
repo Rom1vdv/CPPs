@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 14:13:48 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/11 14:37:07 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/11/20 12:50:04 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main(void)
 	Jesus.takeDamage(4);
 	Jesus.beRepaired(3);
 	Jesus.takeDamage(9);
-	Jesus.attack("Adrian");
+	Jesus.attack("kenzo");
 	Jesus.takeDamage(4);
 
 	Angel = God;

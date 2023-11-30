@@ -6,29 +6,39 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 14:51:58 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/27 16:07:23 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/11/20 16:10:29 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap()
-: ClapTrap(), name("Default"), hitPoints(100), energyPoints(100), attackDamage(30)
+: ClapTrap()
 {
+	this->hitPoints = 100;
+	this->energyPoints = 100;
+	this->attackDamage = 30;
 	std::cout << "[Default] FragTrap constructor called " << std::endl;	
 	return ;
 }
 
 FragTrap::FragTrap(std::string name)
-: ClapTrap(), name(name), hitPoints(100), energyPoints(100), attackDamage(30)
+: ClapTrap(name)
 {
+	this->hitPoints = 100;
+	this->energyPoints = 100;
+	this->attackDamage = 30;
 	std::cout << "[Default] FragTrap constructor called " << std::endl;	
 	return ;
 }
 
 FragTrap::FragTrap(FragTrap const & other)
-: ClapTrap(), name(other.name), hitPoints(other.hitPoints), energyPoints(other.energyPoints), attackDamage(other.attackDamage)
+: ClapTrap(other.name)
 {
+	this->name = other.name;
+	this->hitPoints = other.hitPoints;
+	this->energyPoints = other.energyPoints;
+	this->attackDamage = other.attackDamage;
 	std::cout << "[Copy Constructor] FragTrap constructor called " << std::endl;	
 	return ;
 }
@@ -85,6 +95,6 @@ void	FragTrap::highFivesGuys(void)
 		std::cout << "FragTrap " << this->name << " cannot do anything because he lost all his health points" << std::endl;
 		return ;
 	}
-	std::cout << "Would you agree to high five my cute person? UwU" << std::endl;
+	std::cout << "FragTrap : Would you agree to high five my cute person? UwU" << std::endl;
 	return ;
 }

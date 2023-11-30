@@ -6,29 +6,39 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 17:37:02 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/27 15:46:57 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/11/20 16:10:38 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap()
-: ClapTrap(), name("Default"), hitPoints(100), energyPoints(50), attackDamage(20)
+: ClapTrap()
 {
+	this->hitPoints = 100;
+	this->energyPoints = 50;
+	this->attackDamage = 20;
 	std::cout << "[Default] ScavTrap constructor called " << std::endl;
 	return ;
 }
 
-ScavTrap::ScavTrap(std::string Name)
-: ClapTrap(Name), name(Name), hitPoints(100), energyPoints(50), attackDamage(20)
+ScavTrap::ScavTrap(std::string name)
+: ClapTrap(name)
 {
+	this->hitPoints = 100;
+	this->energyPoints = 50;
+	this->attackDamage = 20;
 	std::cout << "[Parametric] ScavTrap constructor called " << std::endl;
 	return ;
 }
 
 ScavTrap::ScavTrap(ScavTrap const & other)
-: ClapTrap(), name(other.name), hitPoints(other.hitPoints), energyPoints(other.energyPoints), attackDamage(other.attackDamage)
+: ClapTrap(other.name)
 {
+	this->name = other.name;
+	this->hitPoints = other.hitPoints;
+	this->energyPoints = other.energyPoints;
+	this->attackDamage = other.attackDamage;
 	std::cout << "[Copy Constructor] ScavTrap constructor called" << std::endl;
 	return ;
 }
