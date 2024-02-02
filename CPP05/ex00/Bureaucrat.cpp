@@ -38,3 +38,18 @@ Bureaucrat & Bureaucrat::operator=(Bureaucrat const & rhs)
 	this->grade = rhs.grade;
 	return *this;
 }
+
+std::string const Bureaucrat::getName() const
+{
+	return this->name;
+}
+
+unsigned int Bureaucrat::getGrade() const
+{
+	return this->grade;
+}
+
+void	Bureaucrat::incrementGrade(int value)
+{
+	
+}
