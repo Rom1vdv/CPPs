@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romvan-d <romvan-d@student.s19.be>         +#+  +:+       +#+        */
+/*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 15:05:18 by romvan-d          #+#    #+#             */
-/*   Updated: 2024/02/15 16:11:04 by romvan-d         ###   ########.fr       */
+/*   Updated: 2024/03/05 14:06:48 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ class AForm
         AForm();
         AForm(const std::string name, const int signGradeRequired, const int executeGradeRequired);
         AForm(const Form & other);
-        ~AForm();
-        A
-         Form & operator=(Form const & other);
+        virtual ~AForm();
+        
+        Form & operator=(Form const & other);
         
         class GradeTooHighException : public std::exception
         {
@@ -42,7 +42,7 @@ class AForm
         int                 getExecuteGradeRequirement() const;
 
         void                beSigned(Bureaucrat & bureaucrat);
-        
+        virtual	void		execute(Bureaucrat & bureaucrat) = 0;
         
     private :
         const std::string   name;

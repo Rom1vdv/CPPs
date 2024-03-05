@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/13 16:05:05 by romvan-d          #+#    #+#             */
-/*   Updated: 2024/03/05 14:17:43 by romvan-d         ###   ########.fr       */
+/*   Created: 2024/03/05 14:09:27 by romvan-d          #+#    #+#             */
+/*   Updated: 2024/03/05 14:28:05 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
-Form::Form()
-: name("Default"), signedStatus(false),
-signGradeRequired(150), executeGradeRequired(150)
+AForm::AForm()
+:  name("default"), signedStatus(false), executeGradeRequired(150), signGradeRequired(150)
 {
-	return ;   
+	return ;
 }
 
-Form::Form(const std::string name, const int signGradeRequired, const int executeGradeRequired)
+AForm::AForm(const std::string name, const int signGradeRequired, const int executeGradeRequired)
 : name(name), signedStatus(false),
 signGradeRequired(signGradeRequired), executeGradeRequired(executeGradeRequired)
 {
@@ -34,8 +33,8 @@ signGradeRequired(signGradeRequired), executeGradeRequired(executeGradeRequired)
 	return ;
 }
 
-Form::Form(const Form & other)
-: name(other.name), signedStatus(other.signedStatus),
+AForm::AForm(const Form & other);
+name(other.name), signedStatus(other.signedStatus),
 signGradeRequired(other.signGradeRequired), executeGradeRequired(other.executeGradeRequired)
 {
 	if (signGradeRequired < 1 | executeGradeRequired < 1)
@@ -46,64 +45,34 @@ signGradeRequired(other.signGradeRequired), executeGradeRequired(other.executeGr
 	{
 		throw Form::GradeTooLowException();
 	}
-	return ;
+	return ;	
 }
 
-Form & Form::operator=(Form const & other)
-{
-	this->signedStatus = other.signedStatus;
-	return *this;
-}
-
-Form::~Form()
-{
-	return ;
-}
-
-bool	Form::getSigned() const
+bool	AForm::getSigned() const
 {
 	return this->signedStatus;
 }
 
-std::string Form::getName() const
+std::string AForm::getName() const
 {
 	return this->name;
 }
 
-int	Form::getSignGradeRequirement() const
+int AForm::getSignGradeRequirement() const
 {
 	return this->signGradeRequired;
 }
 
-int	Form::getExecuteGradeRequirement() const
+int	AForm::getExecuteGradeRequirement() const
 {
 	return this->executeGradeRequired;
 }
 
-void	Form::beSigned(Bureaucrat & bureaucrat)
+void	AForm::beSigned(Bureaucrat & bureaucrat)
 {
 	if (bureaucrat.getGrade() > this->signGradeRequired)
 	{
 		throw Form::GradeTooLowException();
 	}
 	this->signedStatus = true;
-}
-
-
-const char * Form::GradeTooHighException::what () const throw()
-{
-	return "Grade Too High Exception : grade too high";
-}
-
-const char * Form::GradeTooLowException::what () const throw()
-{
-	return "Grade Too Low Exception : grade too low";
-}
-
-std::ostream & operator<<(std::ostream & input, Form & rhs)
-{
-	input << "This Form named " << rhs.getName() << " signed status is : " << rhs.getSigned()
-	<< " has a required grade to sign : " << rhs.getSignGradeRequirement() << " and an executing grade of : "
-	<< rhs.getExecuteGradeRequirement() << ".";
-	return input;
 }
