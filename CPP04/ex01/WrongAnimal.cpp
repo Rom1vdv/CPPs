@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rom1 <rom1@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 23:31:54 by rom1              #+#    #+#             */
-/*   Updated: 2023/10/20 23:41:42 by rom1             ###   ########.fr       */
+/*   Updated: 2024/07/18 16:07:34 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,9 @@ WrongAnimal & WrongAnimal::operator=(WrongAnimal const & rhs)
 void WrongAnimal::makeSound() const
 {
 	
+}
+
+std::string WrongAnimal::getType() const
+{
+	return this->type;
 }

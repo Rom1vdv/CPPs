@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rom1 <rom1@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:50:58 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/20 22:50:45 by rom1             ###   ########.fr       */
+/*   Updated: 2024/09/09 14:15:00 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define ANIMAL_HPP
 
 #include <iostream>
+#include "Brain.hpp"
 
 class Animal
 {
@@ -31,6 +32,7 @@ class Animal
 		
 		virtual void makeSound() const;
 		std::string getType() const;
+		virtual Brain *getBrain() const;
 };
 
 #endif
