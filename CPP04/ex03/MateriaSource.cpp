@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rom1 <rom1@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:51:07 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/12/31 11:16:38 by rom1             ###   ########.fr       */
+/*   Updated: 2024/09/09 14:50:23 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 
 MateriaSource::MateriaSource()
-: IMateriaSource(), 
+: IMateriaSource()
 {
 	for (int i = 0; i < 4; i++)
 	{
@@ -23,7 +23,7 @@ MateriaSource::MateriaSource()
 }
 
 MateriaSource::MateriaSource(MateriaSource & other)
-: IMateriaSource(other),
+: IMateriaSource(other)
 {
 	for (int i = 0; i < 4; i++)
 	{
@@ -33,7 +33,6 @@ MateriaSource::MateriaSource(MateriaSource & other)
 }
 
 MateriaSource::~MateriaSource()
-: IMateriaSource(), 
 {
 	for (int i = 0; i < 4; i++)
 	{
@@ -46,6 +45,7 @@ MateriaSource & MateriaSource::operator=(MateriaSource const & rhs)
 {
 	for (int i = 0; i < 4; i++)
 	{
+		delete this->knownMaterias[i];
 		this->knownMaterias[i] = rhs.knownMaterias[i]->clone();
 	}
 	return *this;
@@ -73,5 +73,5 @@ AMateria * MateriaSource::createMateria(std::string const & type)
 			return (retvalue);
 		}
 	}
-	return ;
+	return NULL;
 }
