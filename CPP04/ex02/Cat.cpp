@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 22:05:18 by rom1              #+#    #+#             */
-/*   Updated: 2023/10/23 13:50:58 by romvan-d         ###   ########.fr       */
+/*   Updated: 2024/07/18 15:58:54 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ Cat::Cat(Cat const & other)
 {
 	std::cout << "[Copy] Cat Constructor called" << std::endl;
 	this->type = other.type;
+	this->brain = new Brain(*(other.brain));
 	return ; 
 }
 
@@ -45,4 +46,9 @@ void Cat::makeSound() const
 {
 	std::cout << "Meowdy" << std::endl;
 	return ;
+}
+
+Brain *Cat::getBrain() const
+{
+	return this->brain;
 }

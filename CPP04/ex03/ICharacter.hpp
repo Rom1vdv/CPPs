@@ -6,12 +6,15 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 16:03:34 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/10/23 16:07:06 by romvan-d         ###   ########.fr       */
+/*   Updated: 2024/09/16 16:10:09 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 #define ICHARACTER_HPP
+
+
+class AMateria;
 
 class ICharacter
 {
