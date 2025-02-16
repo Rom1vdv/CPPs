@@ -44,6 +44,7 @@ class AForm
         
         class FormNotSignedException: public std::exception
         {
+
                 virtual const char* what() const throw();
         };
 

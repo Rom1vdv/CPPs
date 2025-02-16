@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rom1 <rom1@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 16:05:05 by romvan-d          #+#    #+#             */
-/*   Updated: 2024/03/05 14:17:43 by romvan-d         ###   ########.fr       */
+/*   Updated: 2025/02/16 22:24:04 by rom1             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ Form::Form(const std::string name, const int signGradeRequired, const int execut
 : name(name), signedStatus(false),
 signGradeRequired(signGradeRequired), executeGradeRequired(executeGradeRequired)
 {
-	if (signGradeRequired < 1 | executeGradeRequired < 1)
+	if (signGradeRequired < 1 || executeGradeRequired < 1)
 	{
 		throw Form::GradeTooHighException();
 	}
-	if (signGradeRequired > 150 | executeGradeRequired > 150)
+	if (signGradeRequired > 150 || executeGradeRequired > 150)
 	{
 		throw Form::GradeTooLowException();
 	}
@@ -38,15 +38,7 @@ Form::Form(const Form & other)
 : name(other.name), signedStatus(other.signedStatus),
 signGradeRequired(other.signGradeRequired), executeGradeRequired(other.executeGradeRequired)
 {
-	if (signGradeRequired < 1 | executeGradeRequired < 1)
-	{
-		throw Form::GradeTooHighException();
-	}
-	if (signGradeRequired > 150 | executeGradeRequired > 150)
-	{
-		throw Form::GradeTooLowException();
-	}
-	return ;
+
 }
 
 Form & Form::operator=(Form const & other)
@@ -86,6 +78,8 @@ void	Form::beSigned(Bureaucrat & bureaucrat)
 	{
 		throw Form::GradeTooLowException();
 	}
+	else if (this->signedStatus == true)
+        throw AlreadySignedException();
 	this->signedStatus = true;
 }
 
@@ -98,6 +92,11 @@ const char * Form::GradeTooHighException::what () const throw()
 const char * Form::GradeTooLowException::what () const throw()
 {
 	return "Grade Too Low Exception : grade too low";
+}
+
+const char * Form::AlreadySignedException::what() const throw()
+{
+    return("[Form::AlreadySignedException] : Form is alreay signed.");
 }
 
 std::ostream & operator<<(std::ostream & input, Form & rhs)

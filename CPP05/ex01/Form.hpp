@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romvan-d <romvan-d@student.s19.be>         +#+  +:+       +#+        */
+/*   By: rom1 <rom1@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 15:05:18 by romvan-d          #+#    #+#             */
-/*   Updated: 2024/02/15 14:38:38 by romvan-d         ###   ########.fr       */
+/*   Updated: 2025/02/16 22:20:37 by rom1             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,17 @@ class Form
         {
             const char * what() const throw();
         };
+        
         class GradeTooLowException : public std::exception
         {
             const char * what() const throw();
         };
 
+        class AlreadySignedException : public std::exception
+        {
+                const char * what() const throw();
+        };
+        
         bool                getSigned() const;
         std::string         getName() const;
         int                 getSignGradeRequirement() const;

@@ -3,75 +3,70 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rom1 <rom1@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:51:17 by romvan-d          #+#    #+#             */
-/*   Updated: 2024/07/08 11:02:47 by romvan-d         ###   ########.fr       */
+/*   Updated: 2025/02/16 23:00:06 by rom1             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Bureaucrat.hpp"
-# include "Form.hpp"
+#include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
-int main(void){
-    std::cout << "============================" << std::endl;
-    try {
-        Form b("Contract for Remy", 1000, 149);
-    }
-    catch (std::exception &e) {
-        std::cout << e.what() << std::endl;
-    }
-    try {
-        Form b("Contract for Remy", -1111, 149);
-    }
-    catch (std::exception &e) {
-        std::cout << e.what() << std::endl;
-    }
-    try {
-        Form b("Contract for Remy", 50, 1000);
-    }
-    catch (std::exception &e) {
-        std::cout << e.what() << std::endl;
-    }
-    try {
-        Form b("Contract for Remy", 50, -100);
-    }
-    catch (std::exception &e) {
-        std::cout << e.what() << std::endl;
-    }
-    try {
-        std::cout << std::endl << "============================" << std::endl;
-        Bureaucrat notAChef("Remy", 150);
-        Form b("Contract for Remy", 149, 149);
-        std::cout << b << std::endl;
-        notAChef.signForm(b);
-    }
-    catch (std::exception &e) {
-        std::cout << e.what() << std::endl;
-    }
-    try {
-        std::cout << std::endl << "============================" << std::endl;
-        Bureaucrat chef("Michelle", 1);
-        Bureaucrat notAChef("Remy", 150);
-        Form b("Contract for Remy", 149, 149);
-        std::cout << b << std::endl;
-        chef.signForm(b);
-        std::cout << std::endl;
-        std::cout << b << std::endl;
-    }
-    catch (std::exception &e) {
-        std::cout << e.what() << std::endl;
-    }
-    try {
-        std::cout << std::endl << "============================" << std::endl;
-        Form randomPaper;
-        Form importantPaper("Big Contract", 1, 1);
-        Bureaucrat notAChef("Remy", 150);
-        notAChef.signForm(randomPaper);
-        importantPaper.beSigned(notAChef);
-    }
-    catch (std::exception &e) {
-        std::cout << e.what() << std::endl;
-    }
-    return (0);
+int	main( void ) {
+	Bureaucrat	master( "john", 1 );
+	Bureaucrat	middle( "bob", 73 );
+	Bureaucrat	servant( "marc", 150 );
+	AForm		*shruform = new ShrubberyCreationForm( "tree" );
+	AForm		*roboform = new RobotomyRequestForm( "franken" );
+	AForm		*presiform = new PresidentialPardonForm( "bob" );
+
+	std::cout << std::endl;
+	std::cout << master << std::endl;
+	std::cout << middle << std::endl;
+	std::cout << servant << std::endl;
+	std::cout << *shruform << std::endl;
+	std::cout << *roboform << std::endl;
+	std::cout << *presiform << std::endl << std::endl;
+
+	try {
+		std::cout << "********** TRY 0 **********" << std::endl << std::endl;
+
+		servant.signForm( *shruform );
+		servant.signForm( *roboform );
+		servant.signForm( *presiform );
+		middle.signForm( *shruform );
+		middle.signForm( *roboform );
+		middle.incrementGrade();
+		middle.signForm( *roboform );
+		middle.signForm( *presiform );
+		master.signForm( *shruform );
+		master.signForm( *roboform );
+		master.signForm( *presiform );
+
+		std::cout << std::endl;
+
+		servant.executeForm( *shruform );
+		servant.executeForm( *roboform );
+		servant.executeForm( *presiform );
+		middle.executeForm( *shruform );
+		middle.executeForm( *roboform );
+		middle.executeForm( *presiform );
+		master.executeForm( *shruform );
+		master.executeForm( *roboform );
+		master.executeForm( *presiform );
+
+		std::cout << std::endl << "********** SUCCESS **********" << std::endl << std::endl;
+	}
+	catch (std::exception &e) {
+		std::cout << std::endl << "********** CATCH **********" << std::endl;
+		std::cout << std::endl << e.what() << std::endl << std::endl;
+	}
+
+	delete shruform;
+	delete roboform;
+	delete presiform;
+	return (0);
 }

@@ -1,4 +1,4 @@
-NAME = formlie
+NAME = intern
 
 SRC := $(wildcard *.cpp)
 
