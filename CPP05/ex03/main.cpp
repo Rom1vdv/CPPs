@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rom1 <rom1@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:51:17 by romvan-d          #+#    #+#             */
-/*   Updated: 2025/02/16 23:30:52 by rom1             ###   ########.fr       */
+/*   Updated: 2025/05/06 14:46:40 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,13 @@ int	main( void )
 	std::cout << std::endl;
 
 	try {
-		std::cout << "********** TRY 0 **********" << std::endl << std::endl;
+		std::cout << "********** TRY **********" << std::endl << std::endl;
 
 		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 		scf = someRandomIntern.makeForm("shrubbery creation", "Blender");
 		pdf = someRandomIntern.makeForm("presidential pardon", "Blunder");
-		errorf = someRandomIntern.makeForm("error in request", "Bender");
-		
 		std::cout << std::endl << "********** SUCCESS **********" << std::endl << std::endl;
+		errorf = someRandomIntern.makeForm("error in request", "Bender");
 	}
 	catch (std::exception &e) {
 		std::cout << std::endl << "********** CATCH **********" << std::endl;

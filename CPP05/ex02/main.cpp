@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rom1 <rom1@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:51:17 by romvan-d          #+#    #+#             */
-/*   Updated: 2025/02/16 23:00:06 by rom1             ###   ########.fr       */
+/*   Updated: 2025/05/06 14:12:41 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main( void ) {
 	std::cout << *presiform << std::endl << std::endl;
 
 	try {
-		std::cout << "********** TRY 0 **********" << std::endl << std::endl;
+		std::cout << "********** TRY **********" << std::endl << std::endl;
 
 		servant.signForm( *shruform );
 		servant.signForm( *roboform );

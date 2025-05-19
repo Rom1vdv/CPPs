@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romvan-d <romvan-d@student.s19.be>         +#+  +:+       +#+        */
+/*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:51:17 by romvan-d          #+#    #+#             */
-/*   Updated: 2024/02/15 14:45:40 by romvan-d         ###   ########.fr       */
+/*   Updated: 2025/05/06 14:05:41 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int main(void){
         chef.signForm(b);
         std::cout << std::endl;
         std::cout << b << std::endl;
+        chef.signForm(b);
     }
     catch (std::exception &e) {
         std::cout << e.what() << std::endl;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romvan-d <romvan-d@student.s19.be>         +#+  +:+       +#+        */
+/*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:57:01 by romvan-d          #+#    #+#             */
-/*   Updated: 2024/02/15 14:08:55 by romvan-d         ###   ########.fr       */
+/*   Updated: 2025/05/06 12:09:05 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ Bureaucrat::Bureaucrat()
 }
 
 Bureaucrat::Bureaucrat(std::string const name, unsigned int grade)
-: name(name), grade(grade)
+: name(name)
 {
-
 	if (grade < 1)
 	{
 		throw Bureaucrat::GradeTooHighException();
@@ -30,6 +29,7 @@ Bureaucrat::Bureaucrat(std::string const name, unsigned int grade)
 	{
 		throw Bureaucrat::GradeTooLowException();
 	}
+	this->grade = grade;
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const & other)
@@ -69,8 +69,7 @@ int Bureaucrat::getGrade() const
 
 void	Bureaucrat::incrementGrade(int value)
 {
-	try
-	{
+
 		if (this->grade - value < 1)
 		{
 			throw Bureaucrat::GradeTooHighException();
@@ -79,18 +78,11 @@ void	Bureaucrat::incrementGrade(int value)
 		{
 			this->grade -= value;
 		}
-	}
-	catch(Bureaucrat::GradeTooHighException & e)
-	{
-		std::cout << e.what() << '\n';
-	}
-	return ;
 }
 
 void	Bureaucrat::decrementGrade(int value)
 {
-	try
-	{
+
 		if (this->grade + value > 150)
 		{
 			throw Bureaucrat::GradeTooLowException();
@@ -99,12 +91,6 @@ void	Bureaucrat::decrementGrade(int value)
 		{
 			this->grade += value;
 		}
-	}
-	catch(Bureaucrat::GradeTooLowException & e)
-	{
-		std::cout << e.what() << '\n';
-	}
-	return ;
 }
 
 const char * Bureaucrat::GradeTooHighException::what() const throw()

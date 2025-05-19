@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romvan-d <romvan-d@student.s19.be>         +#+  +:+       +#+        */
+/*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:51:17 by romvan-d          #+#    #+#             */
-/*   Updated: 2024/02/13 14:11:25 by romvan-d         ###   ########.fr       */
+/*   Updated: 2025/05/06 12:03:00 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,16 @@ int main(void){
     catch (std::exception &e) {
         std::cout << e.what() << std::endl;
     }
-    //std::cout << test << std::endl; //=>impossible d'imprimer ca car pas dans le bloc try catch 
-    // try {
+    // std::cout << test << std::endl; //=>impossible d'imprimer ca car pas dans le bloc try catch 
+    try {
         Bureaucrat chef("Michelle", 2);
         chef.incrementGrade();
         std::cout << chef << std::endl;
         chef.incrementGrade();
-    // }
-    // catch (std::exception &e) {
-        // std::cout << e.what() << std::endl;
-    // }
+    }
+    catch (std::exception &e) {
+        std::cout << e.what() << std::endl;
+    }
     try {
         Bureaucrat notAChef("Remy", 149);
         notAChef.decrementGrade();

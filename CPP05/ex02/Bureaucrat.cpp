@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rom1 <rom1@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:57:01 by romvan-d          #+#    #+#             */
-/*   Updated: 2025/02/16 23:08:28 by rom1             ###   ########.fr       */
+/*   Updated: 2025/05/06 14:22:10 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+
 
 Bureaucrat::Bureaucrat()
 : name("default"), grade(75)
@@ -20,9 +21,8 @@ Bureaucrat::Bureaucrat()
 }
 
 Bureaucrat::Bureaucrat(std::string const name, unsigned int grade)
-: name(name), grade(grade)
+: name(name)
 {
-
 	if (grade < 1)
 	{
 		throw Bureaucrat::GradeTooHighException();
@@ -31,6 +31,7 @@ Bureaucrat::Bureaucrat(std::string const name, unsigned int grade)
 	{
 		throw Bureaucrat::GradeTooLowException();
 	}
+	this->grade = grade;
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const & other)
@@ -70,8 +71,7 @@ int Bureaucrat::getGrade() const
 
 void	Bureaucrat::incrementGrade(int value)
 {
-	try
-	{
+
 		if (this->grade - value < 1)
 		{
 			throw Bureaucrat::GradeTooHighException();
@@ -80,18 +80,11 @@ void	Bureaucrat::incrementGrade(int value)
 		{
 			this->grade -= value;
 		}
-	}
-	catch(Bureaucrat::GradeTooHighException & e)
-	{
-		std::cout << e.what() << '\n';
-	}
-	return ;
 }
 
 void	Bureaucrat::decrementGrade(int value)
 {
-	try
-	{
+
 		if (this->grade + value > 150)
 		{
 			throw Bureaucrat::GradeTooLowException();
@@ -100,12 +93,22 @@ void	Bureaucrat::decrementGrade(int value)
 		{
 			this->grade += value;
 		}
-	}
-	catch(Bureaucrat::GradeTooLowException & e)
-	{
-		std::cout << e.what() << '\n';
-	}
-	return ;
+}
+
+const char * Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return "Grade Too High Exception : Cannot assign grade higher than 1";
+}
+
+const char * Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return "Grade Too Low Exception : Cannot assign grade lower than 150";
+}
+
+std::ostream & operator<<(std::ostream & output, Bureaucrat const & rhs)
+{
+	output << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << ".";
+	return output;
 }
 
 void	Bureaucrat::signForm(AForm & form)
@@ -133,21 +136,4 @@ void		Bureaucrat::executeForm( AForm const & form )
 	{
 		std::cout << this->name << " could not execute " << form.getName() << " because " << e.what() << std::endl;
 	}
-}
-
-
-const char * Bureaucrat::GradeTooHighException::what() const throw()
-{
-	return "Grade Too High Exception : Cannot assign grade higher than 1";
-}
-
-const char * Bureaucrat::GradeTooLowException::what() const throw()
-{
-	return "Grade Too Low Exception : Cannot assign grade lower than 150";
-}
-
-std::ostream & operator<<(std::ostream & output, Bureaucrat const & rhs)
-{
-	output << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << ".";
-	return output;
 }
